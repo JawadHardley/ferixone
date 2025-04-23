@@ -22,73 +22,64 @@ $imageUrl2 = asset('storage/images/pi.png');
 
                     <div class="col-6 mb-3">
                         <label class="form-label">Invoice Date</label>
-                        <input type="date" class="form-control" name="invoice_date" required />
+                        <input type="date" class="form-control" name="invoice_date" autocomplete="on" required />
                     </div>
 
                     <div class="col-6 mb-3">
                         <label class="form-label">Euro Rate</label>
-                        <input type="number" step="0.0001" min="0" class="form-control" name="euro_rate" placeholder="e.g. 2630.2500" required />
+                        <input type="number" step="0.0001" min="0" class="form-control" name="euro_rate" placeholder="e.g. 2630.2500" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">FERI Quantity</label>
-                        <input type="number" step="1" min="0" class="form-control" name="feri_quantity" placeholder="e.g. 100" required />
+                        <input type="number" step="1" min="0" class="form-control" name="feri_quantity" placeholder="e.g. 100" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">FERI Units</label>
-                        <input type="text" class="form-control" name="feri_units" placeholder="e.g. containers, tons" required />
+                        <input type="text" class="form-control" name="feri_units" placeholder="e.g. containers, tons" autocomplete="on" required />
                     </div>
-
-                    <!-- <div class="col-4 mb-3">
-                        <label class="form-label">FERI Amount (EUR)</label>
-                        <input type="number" step="0.01" min="0" class="form-control" name="feri_amount" placeholder="e.g. 1500.00" required />
-                    </div> -->
 
                     <div class="col-3 mb-3">
                         <label class="form-label">COD Quantities</label>
-                        <input type="number" step="1" min="0" class="form-control" name="cod_quantities" placeholder="e.g. 50" required />
+                        <input type="number" step="1" min="0" class="form-control" name="cod_quantities" placeholder="e.g. 50" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">COD Units</label>
-                        <input type="text" class="form-control" name="cod_units" placeholder="e.g. containers, pallets" required />
+                        <input type="text" class="form-control" name="cod_units" placeholder="e.g. containers, pallets" autocomplete="on" required />
                     </div>
-
-                    <!-- <div class="col-4 mb-3">
-                        <label class="form-label">COD Amount (EUR)</label>
-                        <input type="number" step="0.01" min="0" class="form-control" name="cod_amount" placeholder="e.g. 800.00" required />
-                    </div> -->
 
                     <div class="col-12 mb-3">
                         <label class="form-label">Transporter Quantity</label>
-                        <input type="number" step="1" min="0" class="form-control" name="transporter_quantity" placeholder="e.g. 3" required />
+                        <input type="number" step="1" min="0" class="form-control" name="transporter_quantity" placeholder="e.g. 3" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">Customer Reference</label>
-                        <input type="text" class="form-control" name="customer_ref" placeholder="e.g. 11080320 -ALE 708" required />
+                        <input type="text" class="form-control" name="customer_ref" placeholder="e.g. 11080320 -ALE 708" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">Customer PO</label>
-                        <input type="text" class="form-control" name="customer_po" placeholder="Enter Purchase Order Number" required />
+                        <input type="text" class="form-control" name="customer_po" placeholder="Enter Purchase Order Number" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">Customer Trip No</label>
-                        <input type="text" class="form-control" name="customer_trip_no" placeholder="Enter Purchase Order Number" required />
+                        <input type="text" class="form-control" name="customer_trip_no" placeholder="Enter Purchase Order Number" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
                         <label class="form-label">Application Invoice Number</label>
-                        <input type="text" class="form-control" name="application_invoice_no" placeholder="e.g. APP-2025-001" required />
+                        <input type="text" class="form-control" name="application_invoice_no" placeholder="e.g. APP-2025-001" autocomplete="on" required />
                     </div>
 
                     <div class="col-12 mb-3">
                         <label class="form-label">FERI / COD Certificate Number</label>
-                        <input type="text" class="form-control" name="certificate_no" placeholder="e.g. CERT-2025-XYZ" required />
+                        <input type="text" class="form-control" name="certificate_no" placeholder="e.g. CERT-2025-XYZ" autocomplete="on" required />
                     </div>
+
                 </div>
 
                 <div class="mb-3 text-end">

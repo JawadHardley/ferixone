@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -63,7 +63,9 @@
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu- dropdown-menu-arrow">
-                            <a href="#" class="dropdown-item">Status</a>
+                            <a href="#" class="dropdown-item" id="themeToggle">
+                                <i class="fa fa-moon" id="themeIcon"></i> Theme
+                            </a>
                             <a href="./profile.html" class="dropdown-item">Profile</a>
                             <a href="#" class="dropdown-item">Feedback</a>
                             <div class="dropdown-divider"></div>
