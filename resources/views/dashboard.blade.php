@@ -66,7 +66,7 @@ $imageUrl4 = asset('storage/images/upload.png');
                     class="img-responsive img-responsive-21x9 card-img-top" style="background-image: url('{{ $imageUrl4 }}')"></div>
                 <div class="card-body">
 
-                    <h3 class="card-title">View Invoice List</h3>
+                    <h3 class="card-title">View Statement List</h3>
                     <p class="text-secondary">
                         View the list of documents you already have in the system
                     </p>
