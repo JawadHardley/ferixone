@@ -47,10 +47,10 @@ $imageUrl2 = asset('storage/images/pi.png');
                                 <tr class="header">
                                     <th>Invoice Number</th>
                                     <th>Invoice Date</th>
+                                    <th>Feri/AD Number</th>
                                     <th>Customer Trip Number</th>
                                     <th>Customer PO</th>
-                                    <th>App. Invoice No</th>
-                                    <th>Total (€)</th>
+                                    <th>Total Amount</th>
                                     <th>Status</th>
                                     <th></th>
                                 </tr>
@@ -58,43 +58,15 @@ $imageUrl2 = asset('storage/images/pi.png');
                             <tbody>
                                 @foreach($records as $record)
 
-                                @php
-                                // Fetching the required values from $record (not $invoice)
-                                $feriQty = $record->feri_quantity ?? 0;
-                                $feriUnits = $record->feri_units ?? 0;
-                                $codQty = $record->cod_quantities ?? 0;
-                                $codUnits = $record->cod_units ?? 0;
-                                $euroRate = $record->euro_rate ?? 1; // Default euro rate if not set
-                                $transporterQty = $record->transporter_quantity ?? 0;
-
-                                // Calculating the amounts
-                                $feriAmount = $feriQty * $feriUnits; // Feri amount: qty * units
-                                $codAmount = $codQty * $codUnits; // COD amount: qty * units
-
-                                // Calculating the UP Total: feri amount + cod amount
-                                $upTotal = $feriAmount + $codAmount;
-
-                                // Calculating the transporter amount: transporter qty * 0.018
-                                $transporterAmount = $transporterQty * 0.018;
-
-                                // Calculating the grand total: transporter amount + (up total * euro rate)
-                                $grandTotal = ($transporterAmount + ($upTotal * $euroRate)) - 5;
-
-                                // Formatting the date
-                                $formattedDate = \Carbon\Carbon::parse($record->invoice_date)->format('d - F - Y');
-                                @endphp
                                 <tr class="border">
-                                    <td class="border p-3">PRES-2025-{{ $record->id }}</td>
+                                    <td class="border p-3">{{ $record->invoice_no }}</td>
                                     <td class="border p-3">
-                                        {{ \Carbon\Carbon::parse($record->invoice_date)->format('d/m/Y') }}
+                                        {{ $record->date }}
                                     </td>
-                                    <td class="border p-3">{{ $record->customer_trip_no }}</td>
-                                    <td class="border p-3">{{ $record->customer_po }}</td>
-                                    <td class="border p-3">{{ $record->application_invoice_no }}</td>
-                                    <td class="border p-3">
-                                        <!-- € {{ $grandTotal }} -->
-                                        $ {{ number_format($grandTotal, 2, '.', ',') }}
-                                    </td>
+                                    <td class="border p-3">{{ $record->feri_ad_no }}</td>
+                                    <td class="border p-3">{{ $record->cus_trip_no }}</td>
+                                    <td class="border p-3">{{ $record->po }}</td>
+                                    <td class="border p-3">{{ $record->amount }}</td>
                                     <td class="border p-3 text-center">
                                         <span class="badge bg-success me-1"></span> Complete
                                     </td>
@@ -104,7 +76,7 @@ $imageUrl2 = asset('storage/images/pi.png');
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a class="dropdown-item" target="_blank" href="{{ route('invoices.download', $record->id) }}">
+                                                <a class="dropdown-item" target="_blank" href="{{ route('invoices.download2') }}">
                                                     <i class="fa fa-download text-primary me-2"></i> Download
                                                 </a>
                                             </li>

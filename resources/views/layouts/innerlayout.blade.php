@@ -22,14 +22,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark p-5 fs-1">
-                    <a href="#">
+                    <a href="/">
                         <i class="fa fa-train-subway me-1"></i> Ferix
                     </a>
                 </h1>
                 <div class="collapse navbar-collapse" id="sidebar-menu">
                     <ul class="navbar-nav pt-lg-3">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
                                     <i class="fa fa-house"></i>
                                 </span>
@@ -37,7 +37,23 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ route('invoices.payform') }}">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="fa fa-file-lines"></i>
+                                </span>
+                                <span class="nav-link-title"> Invoice </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('invoices.statementform') }}">
+                                <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                    <i class="fa fa-circle-nodes"></i>
+                                </span>
+                                <span class="nav-link-title"> Statements </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('invoices.create2') }}">
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
                                     <i class="fa fa-cogs"></i>
                                 </span>
@@ -56,7 +72,8 @@
                     @endphp
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link d-flex lh-1 p-0 px-2" data-bs-toggle="dropdown" aria-label="Open user menu" aria-expanded="false">
-                            <span class="avatar avatar-lg" style="background-image: url('{{ $imageUrl }}')"> </span>
+                            <!-- <span class="avatar avatar-lg" style="background-image: url('{{ $imageUrl }}')"> </span> -->
+                            <i class="fa fa-user avatar avatar-lg p-3"></i>
                             <div class="d-none d-xl-block ps-2">
                                 <h1 class="fs-2 pb-0 mb-0">{{ Auth::user()->name}}</h1>
                                 <div class="mt-1 small text-secondary">Administrator</div>

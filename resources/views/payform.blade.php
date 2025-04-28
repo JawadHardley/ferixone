@@ -31,32 +31,32 @@ $imageUrl2 = asset('storage/images/pi.png');
                     </div>
 
                     <div class="col-3 mb-3">
-                        <label class="form-label">FERI Quantity</label>
+                        <label class="form-label">Feri Cost Per ton/cbm Quantity</label>
                         <input type="number" step="1" min="0" class="form-control" name="feri_quantity" placeholder="e.g. 100" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
-                        <label class="form-label">FERI Units</label>
+                        <label class="form-label">Feri Cost Per ton/cbm Unit Cost</label>
                         <input type="text" class="form-control" name="feri_units" placeholder="e.g. containers, tons" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
-                        <label class="form-label">COD Quantities</label>
+                        <label class="form-label">Feri/COD Certificate Admin Quantity</label>
                         <input type="number" step="1" min="0" class="form-control" name="cod_quantities" placeholder="e.g. 50" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
-                        <label class="form-label">COD Units</label>
+                        <label class="form-label">Feri/COD Certificate Admin Unit Cost</label>
                         <input type="text" class="form-control" name="cod_units" placeholder="e.g. containers, pallets" autocomplete="on" required />
                     </div>
 
                     <div class="col-12 mb-3">
-                        <label class="form-label">Transporter Quantity</label>
+                        <label class="form-label">Transporter DRC Freight TAX Quantity</label>
                         <input type="number" step="1" min="0" class="form-control" name="transporter_quantity" placeholder="e.g. 3" autocomplete="on" required />
                     </div>
 
                     <div class="col-3 mb-3">
-                        <label class="form-label">Customer Reference</label>
+                        <label class="form-label">Customer Reference No</label>
                         <input type="text" class="form-control" name="customer_ref" placeholder="e.g. 11080320 -ALE 708" autocomplete="on" required />
                     </div>
 

@@ -272,7 +272,7 @@ $formattedDate = \Carbon\Carbon::parse($invoice->invoice_date)->format('d - F - 
   <p
     class="s1"
     style="margin-top: 40px; text-align: center;">
-    PROFOMA INVOICE
+    FERI/AD INVOICE
   </p>
 
 
@@ -820,7 +820,7 @@ $formattedDate = \Carbon\Carbon::parse($invoice->invoice_date)->format('d - F - 
         <p
           class="s8"
           style="padding-left: 13pt; text-indent: 0pt; text-align: left">
-          ${{ $transporterAmount }}
+          ${{ number_format($transporterAmount, 2, '.', ',') }}
         </p>
       </td>
     </tr>
@@ -892,7 +892,7 @@ $formattedDate = \Carbon\Carbon::parse($invoice->invoice_date)->format('d - F - 
               line-height: 12pt;
               text-align: left;
             ">
-          ${{ $transporterAmount }}
+          ${{ number_format($transporterAmount, 2, '.', ',') }}
         </p>
       </td>
     </tr>
@@ -918,7 +918,7 @@ $formattedDate = \Carbon\Carbon::parse($invoice->invoice_date)->format('d - F - 
         text-indent: 0pt;
         text-align: right;
       ">
-      GRAND TOTAL <span class="h2">: ${{ $grandTotal }}</span>
+      GRAND TOTAL <span class="h2">: ${{ number_format($grandTotal, 2, '.', ',') }}</span>
     </p>
     <p
       class="s11"
