@@ -5,13 +5,29 @@
 $tatal = 0;
 @endphp
 
+@foreach($invoiceData as $key => $record)
+
+@if ($key === 0)
+@php
+$firstId = $record['id']; // assuming 'id' exists
+@endphp
+@endif
+
+@if ($key === count($invoiceData) - 1)
+@php
+$lastId = $record['id']; // assuming 'id' exists
+@endphp
+@endif
+
+@endforeach
+
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
         ALM Statement
     </title>
-    <meta name="author" content="Jordan Chaki" />
+    <meta name="author" content="xxxcaliper" />
     <meta name="keywords" content="DAGlQ12i2k4,BAE3pwnYqAY,0" />
     <style type="text/css">
         * {
@@ -274,7 +290,7 @@ $tatal = 0;
     <p style="text-indent: 0pt; text-align: left"><br /></p>
 
     <p class="s1" style="margin-top: 40px; text-align: center">
-        ALM STATEMENT
+        {{ strtoupper(date('F')) }} STATEMENT
     </p>
 
     <p style="padding-top: 3pt; text-indent: 0pt; text-align: left">
@@ -337,7 +353,7 @@ $tatal = 0;
                             text-indent: 0pt;
                             text-align: left;
                         ">
-                    STMNT-eeeee
+                    STMNT-{{$firstId}}U{{$lastId}}
                 </p>
             </td>
         </tr>
@@ -382,7 +398,7 @@ $tatal = 0;
                             text-indent: 0pt;
                             text-align: left;
                         ">
-                    ssssss
+                    {{ date('d F Y') }}
                 </p>
             </td>
         </tr>
@@ -448,7 +464,7 @@ $tatal = 0;
             <td class="hrr">{{ $record['feri_ad_no'] }}</td>
             <td class="hrr">{{ $record['cus_trip_no'] }}</td>
             <td class="hrr">{{ $record['po'] }}</td>
-            <td class="hrr">{{ $record['amount'] }}</td>
+            <td class="hrr">$ {{ $record['amount'] }}</td>
             @php
             $tatal += $record['amount'];
             @endphp
@@ -461,7 +477,7 @@ $tatal = 0;
             <td style="margin-top: 20pt" class="hrh hrr"></td>
             <td style="margin-top: 20pt" class="hrh hrr">Total</td>
             <td style="margin-top: 20pt" class="hrh hrr">
-                {{ $tatal }}
+                $ {{ number_format($tatal, 2) }}
             </td>
         </tr>
     </table>
@@ -536,7 +552,9 @@ $tatal = 0;
             ">
         Swift Code: <span class="p">CORUTZTZ</span>
     </h3>
-    <!-- <p style="text-indent: 0pt; text-align: left" /> -->
+
+    <br>
+    <br>
 
     <div style="background-color: #3f4a7e; height: 55px; color: #3f4a7e">
         s

@@ -33,7 +33,6 @@ $imageUrl2 = asset('storage/images/pi.png');
                     </h1>
 
                     <div class="col-12 p-3">
-                        <a href="{{ route('invoices.exportexcel') }}" class="me-2 btn btn-success">Export<i class="fa fa-download ps-2"></i></a>
 
                         <a href="{{ route('invoices.statementform') }}" class="me-2 btn btn-primary">Upload<i class="fa fa-upload ps-2"></i></a>
 
