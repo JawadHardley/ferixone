@@ -40,6 +40,7 @@ class InvoiceController extends Controller
         // $records = Invoice::all();
         // $records = pushtoload::where('sct', 'no')->get();
         $records = InvoiceUpload::simplepaginate(10);
+        // $records = InvoiceUpload::simplepaginate(10);
 
         return view('statementshow', compact('records'));
         // return view('payshow');
@@ -100,7 +101,7 @@ class InvoiceController extends Controller
         }
 
 
-        return redirect()->route('invoices.create')->with('success', 'Invoice saveds successfully!');
+        return redirect()->route('invoices.create2')->with('success', 'Data saveds successfully!');
     }
 
     public function download(Invoice $invoice)
@@ -175,5 +176,15 @@ class InvoiceController extends Controller
 
         // Redirect back with a success message
         return redirect()->route('invoices.create')->with('success', 'Invoice deleted successfully!');
+    }
+
+    public function clear()
+    {
+        // InvoiceUpload::table('invoice_uploads')->truncate(); // or ->delete();
+
+        // Find the invoice by ID
+        InvoiceUpload::truncate();
+
+        return redirect()->back()->with('success', 'Table cleared successfully.');
     }
 }

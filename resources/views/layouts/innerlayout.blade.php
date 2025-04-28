@@ -53,7 +53,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('invoices.create2') }}">
+                            <a class="nav-link" href="#">
                                 <span class="nav-link-icon d-md-none d-lg-inline-block">
                                     <i class="fa fa-cogs"></i>
                                 </span>

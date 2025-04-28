@@ -40,4 +40,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/invoices/download2', [InvoiceController::class, 'download2'])->name('invoices.download2');
     Route::delete('/invoices/{id}', [InvoiceController::class, 'destroy'])->name('invoices.destroy');
     Route::get('/invoices/export', [InvoiceController::class, 'exportexcel'])->name('invoices.exportexcel');
+    Route::delete('/statement/clear', [InvoiceController::class, 'clear'])->name('statements.clear');
 });

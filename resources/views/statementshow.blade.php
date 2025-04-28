@@ -28,8 +28,22 @@ $imageUrl2 = asset('storage/images/pi.png');
                     <!-- </div> -->
                     @endif
 
+                    <h1 class="px-3 py-0 my-0">
+                        All ALM Statements
+                    </h1>
+
                     <div class="col-12 p-3">
-                        <a href="{{ route('invoices.exportexcel') }}" class="btn btn-success">Export<i class="fa fa-download ps-2"></i></a>
+                        <a href="{{ route('invoices.exportexcel') }}" class="me-2 btn btn-success">Export<i class="fa fa-download ps-2"></i></a>
+
+                        <a href="{{ route('invoices.statementform') }}" class="me-2 btn btn-primary">Upload<i class="fa fa-upload ps-2"></i></a>
+
+                        <form action="{{ route('statements.clear') }}" method="POST" onsubmit="return confirm('Are you sure you want to delete all data?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="me-2 btn btn-danger">
+                                Clear All <i class="fa fa-trash ps-2"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="col-12 px-3">
                         <input
@@ -79,12 +93,6 @@ $imageUrl2 = asset('storage/images/pi.png');
                                                 <a class="dropdown-item" target="_blank" href="{{ route('invoices.download2') }}">
                                                     <i class="fa fa-download text-primary me-2"></i> Download
                                                 </a>
-                                            </li>
-                                            <li>
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#m{{ $record->id }}" class="dropdown-item">
-                                                    <i class="fa fa-trash me-2 text-danger"></i> Delete
-                                                </button>
-                                                <!-- Delete Button -->
                                             </li>
                                         </ul>
                                     </td>
@@ -153,8 +161,8 @@ $imageUrl2 = asset('storage/images/pi.png');
                         </table>
 
                     </div>
-                    <div class="col-12 m-0">
-                        <!-- $records->links() -->
+                    <div class="col-12 m-0 px-5">
+                        {{$records->links()}}
                     </div>
                     <!-- here is the body cols end -->
                 </div>
